@@ -29,7 +29,7 @@ const Cart = () => {
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 z-20 mt-4 w-[min(22rem,calc(100vw-2rem))] rounded-2xl border border-gray-200 bg-white p-4 shadow-xl">
+        <div className="fixed left-1/2 top-1/2 z-50 w-[min(22rem,calc(100vw-2rem))] -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-gray-200 bg-white p-4 shadow-xl sm:absolute sm:left-auto sm:right-0 sm:top-auto sm:z-20 sm:mt-4 sm:translate-x-0 sm:translate-y-0">
           <div className="mb-4 flex items-center justify-between">
             <h2 className="text-lg font-semibold text-gray-900">{t("yourCart")}</h2>
             <button type="button" onClick={() => setIsOpen(false)} aria-label="Close cart">
