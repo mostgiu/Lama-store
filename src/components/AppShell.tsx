@@ -10,7 +10,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
 
   return (
     <div
-      className={`mx-auto flex min-h-screen w-full max-w-6xl flex-col p-4 transition-colors duration-300 ${
+      className={`mx-auto flex min-h-screen w-full max-w-6xl flex-col p-4 pt-[max(1.5rem,env(safe-area-inset-top))] transition-colors duration-300 ${
         theme === "dark" ? "bg-[#09090b] text-zinc-100" : "bg-white text-zinc-900"
       }`}
     >
