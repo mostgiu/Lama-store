@@ -14,7 +14,7 @@ const Navbar = () => {
   const { language, theme, toggleLanguage, toggleTheme, t } = useLanguage();
 
   return (
-    <nav className="relative flex w-full flex-wrap items-center justify-between gap-4 py-2">
+    <nav className="relative flex w-full flex-wrap items-center justify-center gap-4 py-2 md:justify-between">
       <Link href="/" className="flex items-center gap-2">
         <Image src={"/logo.png"} alt="Logo" width={30} height={30} />
         <span className="font-bold text-lg">LAMA.</span>
