@@ -1,7 +1,8 @@
-const Homepage = () => {
-  return (
-    <div className=''>Homepage</div>
-  )
-}
+import { products } from "@/data/products";
+import HomeContent from "@/components/HomeContent";
 
-export default Homepage
+const Homepage = () => {
+  return <HomeContent products={products} />;
+};
+
+export default Homepage;
