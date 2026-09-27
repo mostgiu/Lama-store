@@ -8,7 +8,7 @@ import { useCart } from "@/components/CartContext";
 import { useLanguage } from "@/components/LanguageContext";
 
 const CartPage = () => {
-  const { items, itemCount, total, updateQuantity, removeItem } = useCart();
+  const { items, itemCount, total, updateQuantity, removeItem, clearCart } = useCart();
   const { t } = useLanguage();
   const [checkoutStep, setCheckoutStep] = useState<1 | 2 | 3>(1);
   const [paymentMethod, setPaymentMethod] = useState("stripe");
@@ -85,7 +85,19 @@ const CartPage = () => {
           <p className="text-sm uppercase tracking-[0.25em] text-gray-500">{t("yourSelection")}</p>
           <h1 className="text-3xl font-bold text-gray-900">{t("shoppingCart")}</h1>
         </div>
-        <span className="text-sm text-gray-500">{itemCount} {itemCount === 1 ? t("item") : t("items")}</span>
+        <div className="flex items-center gap-4">
+          <span className="text-sm text-gray-500">{itemCount} {itemCount === 1 ? t("item") : t("items")}</span>
+          {items.length > 0 && (
+            <button
+              type="button"
+              onClick={clearCart}
+              className="inline-flex items-center gap-1 text-sm text-gray-500 transition hover:text-red-600"
+            >
+              <Trash2 className="h-4 w-4" aria-hidden="true" />
+              {t("clearCart")}
+            </button>
+          )}
+        </div>
       </div>
 
       {items.length === 0 ? (
